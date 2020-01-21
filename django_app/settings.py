@@ -153,10 +153,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 import dj_database_url
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'book/static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'book/static'),
+    os.path.join(BASE_DIR, 'static'),
 )
 
 db_from_env = dj_database_url.config(conn_max_age=500)
