@@ -5,7 +5,7 @@ from .Dokurepo import main
 def index(request):
     data = Book.objects
     params = {
-            "title":"Index",
+            "title":"まゆちんすきすきチュッチュ丸ヽ(*´∀｀)ノ",
             "data":data.all(),
             "count":data.all().count(),
             }
