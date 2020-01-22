@@ -6,7 +6,8 @@ def main():
     
     hon_list = []
     dir_pleace = os.getcwd()
-    target_dir = r"{}\book\reports.html".format(dir_pleace)
+#    target_dir = r"{}\book\reports.html".format(dir_pleace)
+    target_dir = r"{}\toshi.pythonanywhere.com\book\reports.html".format(dir_pleace)
     
     with open(target_dir, encoding="utf-8") as f:
         html = f.read()
