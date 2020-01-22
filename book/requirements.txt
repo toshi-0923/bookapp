@@ -16,3 +16,4 @@ sqlparse==0.3.0
 style==1.1.0
 update==0.0.1
 whitenoise==5.0.1
+lxml==4.2.5
