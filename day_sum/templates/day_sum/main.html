@@ -1,0 +1,28 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'book/css/style.css' %}" />
+</head>
+<body>
+    <h1>{{title}}</h1>
+    <h2>{{goal}}</h2>
+    {{value}}
+    <table>
+        <tr>
+            <th>日付</th>
+            <th>金額</th>
+            {% for item in data %}
+        </tr>
+        <tr>
+            <td>{{item.date}}</td>
+            <td>{{item.value}}</td>
+        </tr>
+        {% endfor %}
+        </tr>
+    </table>
+    <table>
+    </table>
+</body>
+</html>
