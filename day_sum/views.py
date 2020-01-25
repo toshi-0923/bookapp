@@ -39,7 +39,8 @@ def main(request):
     #推移
     tra_value = int(sum_value * DAYS)
     #一日あたりに使ってもいい金額
-    goal_value = int(TODAY_GOAL + ((TODAY_GOAL - ave_value) * COUNT))
+#    goal_value = int(TODAY_GOAL + ((TODAY_GOAL - ave_value) * COUNT))
+    goal_value = int(sum_value / COUNT)
     #最新入力データ
     last_value = sums(sums_value)[-1]
     
