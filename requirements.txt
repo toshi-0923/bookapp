@@ -1,4 +1,4 @@
-django==3.0.2
+django==2.2.4
 bs4==0.0.1
 lxml==4.2.5
 django-boost==1.2.3
