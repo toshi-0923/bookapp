@@ -36,19 +36,23 @@ def main(request):
     sum_value = sum(sums(sums_value))
     #平均
     ave_value = int(sum_value / COUNT)
-    #推移
+    #推移だよ
     tra_value = int(sum_value * DAYS)
     #一日あたりに使ってもいい金額
 #    goal_value = int(TODAY_GOAL + ((TODAY_GOAL - ave_value) * COUNT))
-    goal_value = int(sum_value / COUNT)
+    goal_value = int((GOAL - sum_value) / (DAYS - COUNT))
     #最新入力データ
     last_value = sums(sums_value)[-1]
+    #残金
+    bal_value = GOAL - sum_value
+    
+    
     
     
     #変数リスト
     result_list = {"sum_value":sum_value, "ave_value":ave_value, "tra_value":tra_value, \
                    "GOAL":GOAL, "TODAY_GOAL":TODAY_GOAL, "COUNT":COUNT, \
-                   "last_value":last_value, "goal_value":goal_value}
+                   "last_value":last_value, "goal_value":goal_value, "bal_value":bal_value}
 
 
     
