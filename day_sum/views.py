@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Day_sum
 from .forms import CreateForm
-from django.db.models import QuerySet
 import re
 
 def main(request):
@@ -14,14 +13,18 @@ def main(request):
             values.append(sum([int(item) for item in ss]))
         return values
 
+
     #データのクリエイト部分
-    if (request.method == "POST"):
+    if(request.method == "POST"):
         obj = Day_sum()
         form = CreateForm(request.POST, instance=obj)
         form.save()
         return redirect(to="/day_sum")
-    #全てのデータ
+    
+    
+    
     all_data = Day_sum.objects.all()
+    #全てのデータ
     #クエリデータの中の金額部分だけのデータ
     sums_value = all_data.values("value")
     #目標金額
@@ -62,6 +65,7 @@ def main(request):
             "sums":sums(sums_value),
             "form":CreateForm(),
             "result_list":result_list,
+#            "upload": UploadForm(),
             }
     return render(request, "day_sum/main.html", params)
 
