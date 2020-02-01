@@ -2,4 +2,3 @@ Django==3.0.2
 bs4==0.0.1
 lxml==4.2.5
 django-boost==1.2.3
-pandas==0.23.4

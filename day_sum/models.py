@@ -9,6 +9,3 @@ class Day_sum(models.Model):
         #掛け算に対応してない→対応させるならif分岐
         sums = re.split("[+*]",self.value)
         return "<{0}> {1}円  {2}".format(self.date, sum([int(i) for i in sums]), self.id)
-#
-#class Aggregate(models.Model):
-#    

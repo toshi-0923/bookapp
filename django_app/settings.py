@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     "book",
     "day_sum",
     "django_boost",
-    "aggregate",
 ]
 
 MIDDLEWARE = [
