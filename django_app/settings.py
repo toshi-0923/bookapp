@@ -37,7 +37,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "stdimage",
-    "book",
     "day_sum",
     "django_boost",
     "actress",
