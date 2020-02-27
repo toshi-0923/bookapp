@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from .models import Actress
 from .forms import CreateForm
+from django.contrib.auth.decorators import login_required
 
+
+@login_required(login_url="/admin/login/")
 def index(request):
     createform = CreateForm()
     data = Actress.objects.all()
