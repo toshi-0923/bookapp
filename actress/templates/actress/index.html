@@ -1,0 +1,55 @@
+{% extends "actress/base.html" %}
+
+{% block title %}Index{% endblock %}
+
+{% block header %}
+
+<table>
+    <tr>
+        <form enctype="multipart/form-data" action="{% url 'actress:create_actress' %}", method="POST",>
+        {%csrf_token%}
+        {{createform.as_table}}
+        <tr><td><input type="submit" value="登録"></td></tr>
+        </form>
+    </tr>
+</table>
+
+{% endblock %}
+
+{% block content %}
+<table class="table border">
+    <tr>
+        <th>Image</th>
+        <th>ID</th>
+        <th>名前</th>
+        <th>年齢</th>
+        <th>誕生日</th>
+        <th>住み</th>
+        <th>仕事</th>
+        <th>趣味</th>
+        <th>記念日</th>
+        <th>LINE開始日</th>
+        <th>メモ</th>
+        <th>シナリオ</th>
+        
+    </tr>
+        {% for item in data %}
+    <tr>
+        <td><img src="{{item.image.thumbnail.url}}"></td>
+        <td><a href="{% url 'actress:cast_page' item %}">{{item.no}}<a/></td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.birth}}</td>
+        <td>{{item.visit}}</td>
+        <td>{{item.work}}</td>
+        <td>{{item.hobby}}</td>
+        <td>{{item.co_date}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.memo}}</td>
+        <td>{{item.scenario}}</td>
+        <td><a href= "{% url 'actress:cast_edit' item.no %}">edit</a>
+    </tr>
+        {% endfor %}
+</table>
+
+{% endblock %}

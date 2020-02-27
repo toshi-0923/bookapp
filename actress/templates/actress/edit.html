@@ -1,0 +1,41 @@
+{% extends "actress/base.html" %}
+
+{% block title %}Cast{% endblock %}
+
+{% block header %}
+
+<nav class="navvar navbar-dark bg-dark">
+            <td><a href="{% url 'actress:index' %}">メインページ</a></td>
+</nav>
+{% endblock %}
+
+{% block content %}
+
+<table>
+    <form enctype="multipart/form-data" action="{% url 'actress:cast_edit' data.no %}" method="post">
+        {% csrf_token %}
+        {{form.as_table}}
+        <tr><td></td><td><input type="submit" value="編集"></td></tr>
+    </form>
+</table>
+
+<!--　プロフィール -->
+<table class="table border">
+    <tr>
+        <th>Image</th>
+        <th>ID</th>
+        <th>名前</th>
+        <th>年齢</th>
+        <th>誕生日</th>
+        <th>住み</th>
+        <th>仕事</th>
+        <th>趣味</th>
+        <th>記念日</th>
+        <th>LINE開始日</th>
+        <th>メモ</th>
+        <th>シナリオ</th>
+        
+    </tr>
+
+</table>
+{% endblock %}
