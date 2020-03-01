@@ -28,7 +28,7 @@ def main(request):
     #クエリデータの中の金額部分だけのデータ
     sums_value = all_data.values("value")
     #目標金額
-    GOAL = 25000
+    GOAL = 20000
     #期間
     DAYS = 30
     #一日あたり参考
