@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "day_sum",
     "django_boost",
     "actress",
+    "bootstrap4",
 ]
 
 MIDDLEWARE = [
