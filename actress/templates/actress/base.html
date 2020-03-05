@@ -4,12 +4,22 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
-    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'actress/css/style.css' %}" />
+    <title>{{title}}</title>
 </head>
+<div class="container-fluid">
+<h1>{{title}}</h1>
+<nav class="navvar navbar-dark bg-dark">
+    <td><a href="{% url 'actress:index' %}">メインページ</a></td>
+</nav>
+
 <body>
-        <h1>{{title}}</h1>
-        {% block header %}{% endblock %}
-        {% block content %}{% endblock %}
-    </div>
+{% block header %}
+{% endblock %}
+
+{% block content %}
+{% endblock %}
+    
 </body>
+</div>
 </html>

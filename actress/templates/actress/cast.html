@@ -1,49 +1,56 @@
 {% extends "actress/base.html" %}
+{% load static%}
+<link rel="stylesheet" type="text/css" href="{% static 'actress/css/style.css' %}">
 
-{% block title %}Cast{% endblock %}
 
 {% block header %}
 
-<nav class="navvar navbar-dark bg-dark">
-            <td><a href="{% url 'actress:index' %}">メインページ</a></td>
-</nav>
+
 {% endblock %}
 
 
 {% block content %}
 <!--　プロフィール -->
-<table class="table border">
-    <tr>
-        <th>Image</th>
-        <th>ID</th>
-        <th>名前</th>
-        <th>年齢</th>
-        <th>誕生日</th>
-        <th>住み</th>
-        <th>仕事</th>
-        <th>趣味</th>
-        <th>記念日</th>
-        <th>LINE開始日</th>
-        <th>メモ</th>
-        <th>シナリオ</th>
+    {% for item in data %}
+    <div class="row">
         
-    </tr>
-    <tr>
-    {{data}}
-        {% for item in data %}
-        <td><img src="{{item.image.thumbnail.url}}"></td>
-        <td>{{item.no}}</td>
-        <td>{{item.name}}</td>
-        <td>{{item.age}}</td>
-        <td>{{item.birth}}</td>
-        <td>{{item.visit}}</td>
-        <td>{{item.work}}</td>
-        <td>{{item.hobby}}</td>
-        <td>{{item.co_date}}</td>
-        <td>{{item.date}}</td>
-        <td>{{item.memo}}</td>
-        <td>{{item.scenario}}</td>
-        {% endfor %}
-    </tr>
-</table>
+        <div class="col-lg-2">
+            {{data.image}}
+            <img src="{{item.image.medium.url}}">
+        </div>
+        
+        <div class="col-lg-10">
+            <table class="table border">
+                <tr>
+                    <th>ID</th>
+                    <th>名前</th>
+                    <th>年齢</th>
+                    <th>誕生日</th>
+                    <th>住み</th>
+                    <th>仕事</th>
+                    <th>趣味</th>
+                    <th>記念日</th>
+                    <th>LINE開始日</th>
+                    <th>シナリオ</th>
+                </tr>
+                <tr>
+                    <td>{{item.no}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.birth}}</td>
+                    <td>{{item.visit}}</td>
+                    <td>{{item.work}}</td>
+                    <td>{{item.hobby}}</td>
+                    <td>{{item.co_date}}</td>
+                    <td>{{item.date}}</td>
+                    <td>{{item.scenario}}</td>
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+                    メモ<br>
+                    {{item.memo}}
+    {% endfor %}
+
 {% endblock %}
