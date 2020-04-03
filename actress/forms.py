@@ -6,4 +6,6 @@ class CreateForm(forms.ModelForm):
     class Meta:
         model = Actress
         fields = \
-        ["image","no","name","age","visit","work","hobby","birth","co_date","date","memo","scenario"]
+        ["image","no","name","age","visit","work","hobby","birth","co_date","date","memo","scenario","judgment",\
+         "my_date","family","career","car"]
+
